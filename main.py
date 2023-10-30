@@ -41,12 +41,12 @@ class HttpFs(LoggingMixIn, Operations):
 if __name__ == '__main__':
     # Replace this dictionary with your filenames and URLs
     url_dict = {
-        'file1.exe': 'https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe',
-        'file2.exe': 'https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B776A2EA1-96A7-E95F-F377-1401C9096D47%7D%26lang%3Den%26browser%3D5%26usagestats%3D1%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1%26installdataindex%3Dempty/chrome/install/ChromeStandaloneSetup64.exe',
+        'file1.txt': 'https://example.com/file1.txt',
+        'file2.txt': 'https://example.com/file2.txt',
         # Add more files as needed
     }
 
     # Replace the mount point with your desired local mount path
-    mount_point = '/home/aditya/httpfslink/1'
+    mount_point = '/path/to/mount'
 
     FUSE(HttpFs(url_dict), mount_point, nothreads=True, foreground=True)
